@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["simon@bioteam.net"]
   spec.description   = %q{A gem to facilitate dealing with Phage Finder output files}
   spec.summary       = %q{Provides some core methods for processing Phage Finder output and converting to other formats}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/bioteam/phagefinder"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
