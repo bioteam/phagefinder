@@ -33,6 +33,9 @@ The Phagefinder::Tab module can be used to convert a PhageFinder tab file into a
 	gff_feature_array.each do |gff_line|
 		puts gff_line
 	end
+	
+	# Gives an output that looks something like this (tab delimuted)
+	minirun	PhageFinder	phage_sequence	961043	1041426	0	+	0	Name=Large prophage
 
 ## Contributing
 
