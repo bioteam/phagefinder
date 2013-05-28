@@ -24,15 +24,33 @@ The Tab module is dedicated to operations on the tab output file. A typical file
 
 #### Parsing PhageFinder 'tab' files to GFF3
 
-The Phagefinder::Tab module can be used to convert a PhageFinder tab file into appropriate GFF3
+The Phagefinder::Tab module can be used to convert a PhageFinder tab file into appropriate GFF3.
 
+For more information on the GFF3 file format and what each column means see: http://www.sequenceontology.org/gff3.shtml. The 9 columns are shown below, along with the column from the Phagefinder tab file that I have used to provide the data for the GFF column.
+
+1.	Seqid 	-> asmbl_id
+2.	Source	-> "PhageFinder" (Algorithm name)
+3.	Type	-> phage_sequence (SO:0001042, Sequence ontology term)
+4.	Start	-> begin_region
+5.	End		-> end_region
+6.	Score	-> set to '0'?
+7.	Strand	-> region_orientation
+8.	Phase	-> set to '0'?
+9.	Attributes
+	* Name=#{label},#{type}
+
+
+A script to parse a tab file into GFF might look something like this:
+
+	```ruby
 	require 'phagefinder'
-	
+
 	pf_parser = Phagefinder::Tab.new("/path/to/phagefinder/output/the_tab.txt")
 	gff_feature_array = pf_parser.toGFF
 	gff_feature_array.each do |gff_line|
 		puts gff_line
 	end
+	```
 	
 	# Gives an output that looks something like this (tab delimuted)
 	minirun	PhageFinder	phage_sequence	961043	1041426	0	+	0	Name=Large prophage
