@@ -26,6 +26,8 @@ The Tab module is dedicated to operations on the tab output file. A typical file
 
 The Phagefinder::Tab module can be used to convert a PhageFinder tab file into appropriate GFF3
 
+	require 'phagefinder'
+	
 	pf_parser = Phagefinder::Tab.new("/path/to/phagefinder/output/the_tab.txt")
 	gff_feature_array = pf_parser.toGFF
 	gff_feature_array.each do |gff_line|
@@ -34,8 +36,23 @@ The Phagefinder::Tab module can be used to convert a PhageFinder tab file into a
 
 ## Contributing
 
+I am using rspec to write tests for the gem as it is developed. You can run these tests from the command line as follows
+
+	$ cd phagefinder
+	$ rspec
+	
+
+The output should looks something like this:
+
+	$ 	....
+		Finished in 0.00138 seconds
+		4 examples, 0 failures
+
+If you want to contribute to the code, here's how to do it:
+
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+3. Write appropriate tests using rspec, make sure they all pass!
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create new Pull Request
