@@ -42,15 +42,15 @@ For more information on the GFF3 file format and what each column means see: htt
 
 A script to parse a tab file into GFF might look something like this:
 
-	```ruby
-	require 'phagefinder'
+```ruby
+require 'phagefinder'
 
-	pf_parser = Phagefinder::Tab.new("/path/to/phagefinder/output/the_tab.txt")
-	gff_feature_array = pf_parser.toGFF
-	gff_feature_array.each do |gff_line|
-		puts gff_line
-	end
-	```
+pf_parser = Phagefinder::Tab.new("/path/to/phagefinder/output/the_tab.txt")
+gff_feature_array = pf_parser.toGFF
+gff_feature_array.each do |gff_line|
+	puts gff_line
+end
+```
 	
 	# Gives an output that looks something like this (tab delimuted)
 	minirun	PhageFinder	phage_sequence	961043	1041426	0	+	0	Name=Large prophage
