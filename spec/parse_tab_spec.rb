@@ -1,6 +1,6 @@
 require 'phagefinder/file/tab'
 
-describe Phagefinder::File do
+describe Phagefinder::File::Tab do
   
   before :each do 
     @tab_file = Dir.pwd + "/spec/files/tab_example.txt"

@@ -1,0 +1,9 @@
+190..255	+	21	NP_459006.1	-	-	1	-	thr operon leader peptide
+337..2799	+	820	NP_459007.1	-	-	1	-	bifunctional aspartokinase I/homoserine dehydrogenase I
+2801..3730	+	309	NP_459008.1	-	-	1	-	homoserine kinase
+3734..5020	+	428	NP_459009.1	-	-	1	-	threonine synthase
+5114..5887	-	257	NP_459010.1	-	-	1	-	hypothetical protein
+5966..7396	-	476	NP_459011.1	-	-	1	-	alanine/glycine transport protein
+7665..8618	+	317	NP_459012.1	-	-	1	-	transaldolase B
+8729..9319	+	196	NP_459013.1	-	-	1	-	molybdenum cofactor biosynthesis protein MogA
+9376..9942	-	188	NP_459014.1	-	-	1	-	hypothetical protein
