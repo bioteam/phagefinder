@@ -15,6 +15,8 @@ And then execute:
 
 ## Usage
 
+The Phagefinder gem has a Phagefinder::File submodule, containing  a _Utils_ class that contains the core methods, then output file specific classes (Info and Tab) that are subclasses of Utils.
+
 ### Phagefinder::File::Tab
 
 The Tab module is dedicated to operations on the tab output file. A typical file looks something like this with a single header line and then multiple feature lines, all tab delimited.
