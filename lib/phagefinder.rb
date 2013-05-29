@@ -1,5 +1,7 @@
 require "phagefinder/version"
-require "phagefinder/tab"
+require "phagefinder/file"
+# require "phagefinder/file"
+# require "phagefinder/file"
 
 module Phagefinder
   # Your code goes here...
