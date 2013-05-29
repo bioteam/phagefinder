@@ -12,7 +12,8 @@ module Phagefinder::File
     
     def line_to_gff(line)
       cols = line.split("\t")
-      gff = [cols[0],"PhageFinder","phage_sequence",cols[3],cols[4],"0","","0","Name=#{cols[5].strip}"]
+      name = cols[5].split(";").first
+      gff = [cols[0],"PhageFinder","CDS",cols[3],cols[4],"0","+","0","Name=#{name};ID=#{cols[2]}"]
       return gff.join("\t")
     end
     

@@ -15,7 +15,7 @@ And then execute:
 
 ## Usage
 
-### Phagefinder::Tab
+### Phagefinder::File::Tab
 
 The Tab module is dedicated to operations on the tab output file. A typical file looks something like this with a single header line and then multiple feature lines, all tab delimited.
 
@@ -24,7 +24,7 @@ The Tab module is dedicated to operations on the tab output file. A typical file
 
 #### Parsing PhageFinder 'tab' files to GFF3
 
-The Phagefinder::Tab module can be used to convert a PhageFinder tab file into appropriate GFF3.
+The Phagefinder::File::Tab module can be used to convert a PhageFinder tab file into appropriate GFF3.
 
 For more information on the GFF3 file format and what each column means see: http://www.sequenceontology.org/gff3.shtml. The 9 columns are shown below, along with the column from the Phagefinder tab file that I have used to provide the data for the GFF column.
 
@@ -45,7 +45,7 @@ A script to parse a tab file into GFF might look something like this:
 ```ruby
 require 'phagefinder'
 
-pf_parser = Phagefinder::Tab.new("/path/to/phagefinder/output/the_tab.txt")
+pf_parser = Phagefinder::File::Tab.new("/path/to/phagefinder/output/the_tab.txt")
 gff_feature_array = pf_parser.toGFF
 gff_feature_array.each do |gff_line|
 	puts gff_line
@@ -54,6 +54,29 @@ end
 	
 	# Gives an output that looks something like this (tab delimuted)
 	minirun	PhageFinder	phage_sequence	961043	1041426	0	+	0	Name=Large prophage
+
+### Phagefinder::File::Info
+
+The Phagefinder::File::Info module is dedicated to operations on the info.txt output file. A typical file looks something like this with no header line and then multiple tab delimited lines indicating prediced gene locations against the parent contig
+
+	minirun	1050000	NP_459006.1	190	255	thr operon leader peptide; -
+
+
+#### Parsing PhageFinder 'info' files to GFF3
+
+The Phagefinder::File::Info module can be used to convert a PhageFinder info file into appropriate GFF3.
+
+1.	Seqid 	-> Column 1
+2.	Source	-> "PhageFinder" (Algorithm name)
+3.	Type	-> CDS
+4.	Start	-> Column 4
+5.	End		-> Column 4
+6.	Score	-> 0
+7.	Strand	-> + (Default - not parsed from any data currently)
+8.	Phase	-> 0
+9.	Attributes
+	* Name=#{Column 6};ID=#{Column 3}
+
 
 ## Contributing
 

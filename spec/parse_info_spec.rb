@@ -17,7 +17,7 @@ describe Phagefinder::File::Info do
   it "should parse the file to GFF" do
     pf = Phagefinder::File::Info.new(@info_file)
     
-    expected_GFF = "minirun\tPhageFinder\tphage_sequence\t190\t255\t0\t\t0\tName=thr operon leader peptide; -"
+    expected_GFF = "minirun\tPhageFinder\tCDS\t190\t255\t0\t+\t0\tName=thr operon leader peptide;ID=NP_459006.1"
     gff = pf.toGFF
     gff.size.should == 12 # number of lines in the file
     gff.first.should == expected_GFF
