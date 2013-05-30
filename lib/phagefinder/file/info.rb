@@ -17,5 +17,6 @@ module Phagefinder::File
       return gff.join("\t")
     end
     
+    
   end
 end

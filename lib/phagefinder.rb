@@ -1,5 +1,8 @@
 require "#{File.dirname(__FILE__)}/phagefinder/version"
-# require "#{File.dirname(__FILE__)}/phagefinder/file"
+require "#{File.dirname(__FILE__)}/phagefinder/file/info"
+require "#{File.dirname(__FILE__)}/phagefinder/file/tab"
+require "#{File.dirname(__FILE__)}/phagefinder/file/ptt"
+require "#{File.dirname(__FILE__)}/phagefinder/file/trnascan"
 
 
 module Phagefinder
@@ -19,4 +22,9 @@ module Phagefinder
     return parser.toGFF
   end
   
+  def Phagefinder.trnascan_to_gff(file)
+    parser = Phagefinder::File::Trnascan.new(file)
+    return parser.toGFF
+  end
+
 end

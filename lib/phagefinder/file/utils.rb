@@ -18,11 +18,14 @@ module Phagefinder::File
     def parse_file(params)
       
       remove_headers = params[:remove_headers] || false
+      header_line_count = params[:header_line_count] || 1
       
       lines = File.readlines(@file)
       
       if remove_headers
-        lines.delete_at(0)
+        (1..header_line_count).each do |c|
+          lines.delete_at(0)
+        end
       end
       
       gff = []

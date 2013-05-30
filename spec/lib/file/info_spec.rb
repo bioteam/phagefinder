@@ -23,4 +23,7 @@ describe Phagefinder::File::Info do
     gff.first.should == expected_GFF
   end
   
+  it "should have an empty method" do
+    
+  end
 end
