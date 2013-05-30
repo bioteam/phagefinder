@@ -20,9 +20,10 @@ The Phagefinder module provides some core methods to parse the Phagefinder outpu
 ```ruby
 require 'phagefinder'
 
-    # could also be Phagefinder.info_to_gff("/path/to/the_info.txt")
-	# or Phagefinder.ptt_to_gff("/path/to/the/contig.ptt")
-	# or Phagefinder.trnascan_to_gff("/path/to/the/tRNAscan.out")
+    # could also be:
+	# Phagefinder.info_to_gff("/path/to/the_info.txt")
+	# Phagefinder.ptt_to_gff("/path/to/the/contig.ptt")
+	# Phagefinder.trnascan_to_gff("/path/to/the/tRNAscan.out")
 tab_gff_array = Phagefinder.tab_to_gff('/path/to/tab.txt')
 tab_gff_array.each do |line|
 	puts "GFF: #{line}"
