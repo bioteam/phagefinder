@@ -20,4 +20,10 @@ describe "it should have core methods" do
     Phagefinder.info_to_gff(tab_file).first.should eq expected_GFF
   end
   
+  it "should parse an tRNAscan file" do
+    trnascan_file = Dir.pwd + "/spec/files/trnascan_example.txt"
+    expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t290790\t290866\t88.37\t+\t0\tName=Ile GAT"
+    Phagefinder.trnascan_to_gff(trnascan_file).first.should eq expected_GFF
+  end
+  
 end
