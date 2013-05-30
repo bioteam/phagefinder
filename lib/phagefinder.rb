@@ -19,4 +19,7 @@ module Phagefinder
     return parser.toGFF
   end
   
+  def test
+    
+  end
 end
