@@ -26,5 +26,35 @@ module Phagefinder
     parser = Phagefinder::File::Trnascan.new(file)
     return parser.toGFF
   end
-
+  
+  def Phagefinder.identify_file_type(file_name)
+    if file_name =~ /.+_info.txt$/
+      "info"
+    elsif file_name =~ /.+_tab.txt$/
+      "tab"
+    elsif file_name =~ /.+.ptt$/
+      "ptt"
+    elsif file_name =~ /tRNAscan.out$/
+      "trnascan"
+    else
+      "unknown"
+    end
+  end
+  
+  def Phagefinder.file_to_gff(file)
+    case Phagefinder.identify_file_type(file)
+    when "info"
+      Phagefinder.info_to_gff(file)
+    when "tab"
+      Phagefinder.tab_to_gff(file)
+    when "ptt"
+      Phagefinder.ptt_to_gff(file)
+    when "trnascan"
+      Phagefinder.trnascan_to_gff(file)
+    when "unknown"
+      raise "unidentified file type for #{file} - could not parse automatically"
+    else
+      raise "unidentified file type for #{file} - could not parse automatically"
+    end
+  end
 end

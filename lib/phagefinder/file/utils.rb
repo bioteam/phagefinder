@@ -39,5 +39,13 @@ module Phagefinder::File
 
     end
     
+    def get_strand(seq_start, seq_end)
+      if seq_start < seq_end
+        '+'
+      else
+        '-'
+      end
+    end
+    
   end
 end

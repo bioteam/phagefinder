@@ -28,6 +28,9 @@ tab_gff_array = Phagefinder.tab_to_gff('/path/to/tab.txt')
 tab_gff_array.each do |line|
 	puts "GFF: #{line}"
 end
+	# there is also a generic Phagefinder.file_to_gff(file) method that attempts to
+	# identify the file type by its file name
+tab_gff_array = Phagefinder.file_to_gff('path/to/example_tab.txt)
 ```
 
 
@@ -76,7 +79,7 @@ The Phagefinder::File::Info module can be used to convert a PhageFinder info fil
 4.	Start	-> Column 4
 5.	End		-> Column 5
 6.	Score	-> 0
-7.	Strand	-> + (Default - not parsed from any data currently)
+7.	Strand	-> '+' if start < end, '-' if start > end
 8.	Phase	-> 0
 9.	Attributes
 	* Name=#{Column 6};ID=#{Column 3}
@@ -118,7 +121,7 @@ Here's how we are parsing the tRNAscan.out file into GFF:
 4.	Start	-> Column 2
 5.	End		-> Column 3
 6.	Score	-> Column 8
-7.	Strand	-> "+"
+7.	Strand	-> '+' if start < end, '-' if start > end
 8.	Phase	-> 0
 9.	Attributes
 	* Name=#{Column 4} #{Column 5} #tRNA type and Codon, eg 'Ile GAT'

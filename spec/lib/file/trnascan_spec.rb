@@ -15,14 +15,20 @@ describe Phagefinder::File::Trnascan do
     # pf.should respond_to(:toGFF)
   end
   
+  it "should get the strand from the orientation of the begin/end values" do
+    pf = Phagefinder::File::Trnascan.new(@trnascan_file)
+    pf.get_strand(123,456).should eq "+"
+    pf.get_strand(567,456).should eq "-"
+  end
+  
   it "should parse the file to GFF" do
     pf = Phagefinder::File::Trnascan.new(@trnascan_file)
     expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t290790\t290866\t88.37\t+\t0\tName=Ile GAT"
     gff = pf.toGFF
     gff.first.should == expected_GFF
     
-    # NC_003197 	12	819399 	819474 	Lys	TTT	0	0	99.54
-    last_expected_GFF = expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t819399\t819474\t99.54\t+\t0\tName=Lys TTT"
+    # NC_003197 	69	2529131	2529056	Ala	GGC	0	0	86.51
+    last_expected_GFF = expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t2529131\t2529056\t86.51\t-\t0\tName=Ala GGC"
     gff.last.should == last_expected_GFF
   end
  
