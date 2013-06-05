@@ -1,0 +1,12 @@
+minirun	1050000	NP_459006.1	190	255	thr operon leader peptide; -
+minirun	1050000	NP_459007.1	337	2799	bifunctional aspartokinase I/homoserine dehydrogenase I; -
+minirun	1050000	NP_459008.1	2801	3730	homoserine kinase; -
+minirun	1050000	NP_459009.1	3734	5020	threonine synthase; -
+minirun	1050000	NP_459010.1	5887	5114	hypothetical protein; -
+minirun	1050000	NP_459011.1	7396	5966	alanine/glycine transport protein; -
+minirun	1050000	NP_459012.1	7665	8618	transaldolase B; -
+minirun	1050000	NP_459013.1	8729	9319	molybdenum cofactor biosynthesis protein MogA; -
+minirun	1050000	NP_459014.1	9942	9376	hypothetical protein; -
+minirun	1050000	NP_459015.1	10805	10092	hypothetical protein; -
+minirun	1050000	NP_459016.1	11245	10841	hypothetical protein; -
+minirun	1050000	NP_459017.1	11593	13509	molecular chaperone DnaK; -

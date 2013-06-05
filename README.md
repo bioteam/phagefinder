@@ -27,6 +27,9 @@ tab_gff_array = Phagefinder.tab_to_gff('/path/to/tab.txt')
 tab_gff_array.each do |line|
 	puts "GFF: #{line}"
 end
+	# there is also a generic Phagefinder.file_to_gff(file) method that attempts to
+	# identify the file type by its file name
+tab_gff_array = Phagefinder.file_to_gff('path/to/example_tab.txt)
 ```
 
 
