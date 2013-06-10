@@ -47,5 +47,18 @@ module Phagefinder::File
       end
     end
     
+    # Ensure that the start coordinate is always <= to the end coordinates
+    def orient_coordinates(a,b)
+      int_a = a.to_i
+      int_b = b.to_i
+      sorted_coords = Array.new
+      if int_a > int_b
+        sorted_coords = [int_b,int_a]
+      else
+        sorted_coords = [int_a,int_b]
+      end
+      return sorted_coords
+    end
+    
   end
 end

@@ -14,7 +14,8 @@ module Phagefinder::File
       cols = line.split("\t")
       name = cols[5].split(";").first
       strand= self.get_strand(cols[3],cols[4])
-      gff = [cols[0],"PhageFinder","CDS",cols[3],cols[4],"0",strand,"0","Name=#{name};ID=#{cols[2]}"]
+      (start, stop) = self.orient_coordinates(cols[3],cols[4])
+      gff = [cols[0],"PhageFinder","CDS",start,stop,"0",strand,"0","Name=#{name};ID=#{cols[2]}"]
       return gff.join("\t")
     end
     

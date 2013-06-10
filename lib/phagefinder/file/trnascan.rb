@@ -14,7 +14,8 @@ module Phagefinder::File
       # split by tab and remove any extraneous whitespace that seems to be included in the file
       cols = line.split("\t").collect{|x| x.strip}
       strand = self.get_strand(cols[2],cols[3])
-      gff = [cols[0],"tRNAscan","tRNA_gene",cols[2],cols[3],cols[8],strand,"0","Name=#{cols[4]} #{cols[5]}"]
+      (start,stop) = self.orient_coordinates(cols[2],cols[3])
+      gff = [cols[0],"tRNAscan","tRNA_gene",start, stop,cols[8],strand,"0","Name=#{cols[4]} #{cols[5]}"]
       return gff.join("\t")
     end
     
