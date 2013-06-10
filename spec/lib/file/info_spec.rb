@@ -28,7 +28,4 @@ describe Phagefinder::File::Info do
     gff.last.should == expected_last_GFF
   end
   
-  it "should have an empty method" do
-    
-  end
 end
