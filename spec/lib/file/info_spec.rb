@@ -24,7 +24,7 @@ describe Phagefinder::File::Info do
     
     # minirun	1050000	NP_459016.1	11245	10841	hypothetical protein; -
     # test that it gets the strand correct based on orientation of start/end
-    expected_last_GFF = "minirun\tPhageFinder\tCDS\t11245\t10841\t0\t-\t0\tName=hypothetical protein;ID=NP_459016.1"
+    expected_last_GFF = "minirun\tPhageFinder\tCDS\t10841\t11245\t0\t-\t0\tName=hypothetical protein;ID=NP_459016.1"
     gff.last.should == expected_last_GFF
   end
   

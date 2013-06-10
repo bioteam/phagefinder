@@ -87,7 +87,7 @@ The Phagefinder::File::Info module can be used to convert a PhageFinder info fil
 
 ### Phagefinder::File::Ptt
 
-The Phagefinder::File::Ptt module is dedicated to operations on the *.ptt output file. A typical file looks something like this with no header line and then multiple tab delimited lines indicating prediced gene locations against the parent contig
+The Phagefinder::File::Ptt module is dedicated to operations on the *.ptt output file. A typical file looks something like this with no header line and then multiple tab delimited lines indicating predicted gene locations against the parent contig
 
 		190..255	+	21	NP_459006.1	-	-	1	-	thr operon leader peptide
 
@@ -108,6 +108,20 @@ Here's how we are parsing the *.ptt file into GFF. One complicating factor with 
 8.	Phase	-> 0
 9.	Attributes
 	* Name=#{Column 9};ID=#{Column 4}
+
+
+### Phagefinder::File::Trnascan
+
+The Phagefinder::File::Ptt module is dedicated to operations on the tRNAscan.out output file. 
+
+ A typical file looks something like this with three header lines and then multiple tab delimited lines indicating predicted tRNA locations against the parent contig
+
+	Sequence  		tRNA   	Bounds 	tRNA	Anti	Intron Bounds	Cove
+	Name      	tRNA #	Begin  	End    	Type	Codon	Begin	End	Score
+	--------  	------	----   	------ 	----	-----	-----	----	------
+	NC_003197 	1	290790 	290866 	Ile	GAT	0	0	88.37
+	NC_003197 	2	290976 	291051 	Ala	TGC	0	0	88.77
+	NC_003197 	3	294828 	294904 	Asp	GTC	0	0	92.84
 
 #### Parsing PhageFinder 'tRNAscan.out' files to GFF3
 

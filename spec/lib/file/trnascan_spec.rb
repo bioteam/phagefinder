@@ -28,7 +28,7 @@ describe Phagefinder::File::Trnascan do
     gff.first.should == expected_GFF
     
     # NC_003197 	69	2529131	2529056	Ala	GGC	0	0	86.51
-    last_expected_GFF = expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t2529131\t2529056\t86.51\t-\t0\tName=Ala GGC"
+    last_expected_GFF = expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t2529056\t2529131\t86.51\t-\t0\tName=Ala GGC"
     gff.last.should == last_expected_GFF
   end
  

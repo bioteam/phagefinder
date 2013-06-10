@@ -13,8 +13,9 @@ module Phagefinder::File
     def line_to_gff(line)
       cols = line.split("\t")
       start, stop = parse_range(cols[0])
+      (cds_start, cds_stop) = self.orient_coordinates(start, stop)
       name = cols[8].strip
-      gff = [self.filename,"PhageFinder","CDS",start,stop,"0",cols[1],"0","Name=#{name};ID=#{cols[3]}"]
+      gff = [self.filename,"PhageFinder","CDS",cds_start,cds_stop,"0",cols[1],"0","Name=#{name};ID=#{cols[3]}"]
       return gff.join("\t")
     end
     
