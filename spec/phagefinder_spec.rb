@@ -68,6 +68,10 @@ describe "it should have core methods" do
     expected_GFF = "NC_003197\tAragorn\ttmRNA\t2843947\t2844309\t0\t+\t0\tName=ANDETYALAA**"
     Phagefinder.file_to_gff(aragorn_file).first.should eq expected_GFF
 
+     aragorn_file = Dir.pwd + "/spec/files/example_one_hit_tmRNA_aragorn.out"
+    expected_GFF = "NC_003197\tAragorn\ttmRNA\t2843947\t2844309\t0\t+\t0\tName=ANDETYALAA**"
+    Phagefinder.file_to_gff(aragorn_file).last.should eq expected_GFF
+
   end
   
 end

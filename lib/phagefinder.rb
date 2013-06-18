@@ -3,7 +3,7 @@ require "#{File.dirname(__FILE__)}/phagefinder/file/info"
 require "#{File.dirname(__FILE__)}/phagefinder/file/tab"
 require "#{File.dirname(__FILE__)}/phagefinder/file/ptt"
 require "#{File.dirname(__FILE__)}/phagefinder/file/trnascan"
-
+require "#{File.dirname(__FILE__)}/phagefinder/file/aragorn"
 
 module Phagefinder
 

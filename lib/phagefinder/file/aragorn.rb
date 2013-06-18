@@ -24,6 +24,10 @@ module Phagefinder::File
     def parse_file
       parsed_result_blocks = get_record_blocks
 
+
+      if parsed_result_blocks.empty?
+        raise "Aragorn found no hits, unable to create GFF3"
+      end
       gff_array = []
       parsed_result_blocks.each do |b|
         gff_array << line_to_gff(b)
@@ -68,8 +72,6 @@ module Phagefinder::File
     def parse_block(b)
       results = {}
       b.each do |line|
-
-        puts line
 
         if line =~ /^Location \[(\d+),(\d+)\]$/
           results['beginning'] = $1

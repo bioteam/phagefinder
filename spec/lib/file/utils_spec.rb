@@ -22,4 +22,8 @@ describe Phagefinder::File::Utils do
     
   end
 
+  it "should raise an error if there is no file" do
+    expect { Phagefinder::File::Utils.new("/fake/file.txt")}.to raise_error
+  end
+
 end

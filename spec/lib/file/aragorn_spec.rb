@@ -2,31 +2,66 @@ require 'phagefinder/file/aragorn'
 
 describe Phagefinder::File::Aragorn do
   
-  before :each do 
-    @aragorn_file = Dir.pwd + "/spec/files/example_tmRNA_aragorn.out"
-  end
-  
-  it "should throw an error if it is initialized without a file" do
-   expect { pf = Phagefinder::File::Aragorn.new() }.to raise_error
-  end
-  
-  it "should be initialized with an aragorn file" do
-    expect { pf = Phagefinder::File::Aragorn.new(@aragorn_file) }.to_not raise_error
-    # pf.should respond_to(:toGFF)
+  context "files with results" do
+    before :each do 
+      @aragorn_file = Dir.pwd + "/spec/files/example_tmRNA_aragorn.out"
+    end
+    
+    it "should throw an error if it is initialized without a file" do
+     expect { pf = Phagefinder::File::Aragorn.new() }.to raise_error
+    end
+    
+    it "should be initialized with an aragorn file" do
+      expect { pf = Phagefinder::File::Aragorn.new(@aragorn_file) }.to_not raise_error
+      # pf.should respond_to(:toGFF)
+    end
+
+    it "should parse the record into one block per result" do
+      pf = Phagefinder::File::Aragorn.new(@aragorn_file)
+      results = pf.get_record_blocks
+      results.count.should == 2
+
+      results.first['beginning'].should == "2843947"
+      results.first['end'].should == "2844309"
+      results.first['tag_peptide'].should == "ANDETYALAA**"
+      results.first['sequence_acc'].should == "NC_003197"
+
+    end
   end
 
-  it "should parse the record into one block per result" do
-    pf = Phagefinder::File::Aragorn.new(@aragorn_file)
-    results = pf.get_record_blocks
-    results.count.should == 2
+  context "file with one result" do
 
-    results.first['beginning'].should == "2843947"
-    results.first['end'].should == "2844309"
-    results.first['tag_peptide'].should == "ANDETYALAA**"
-    results.first['sequence_acc'].should == "NC_003197"
+    before :each do 
+      @one_hit_aragorn_file = Dir.pwd + "/spec/files/example_one_hit_tmRNA_aragorn.out"
+    end
+
+    it "should parse the record into one block per result" do
+      pf = Phagefinder::File::Aragorn.new(@one_hit_aragorn_file)
+      results = pf.get_record_blocks
+      results.count.should == 1
+
+      results.first['beginning'].should == "2843947"
+      results.first['end'].should == "2844309"
+      results.first['tag_peptide'].should == "ANDETYALAA**"
+      results.first['sequence_acc'].should == "NC_003197"
+
+    end
 
   end
 
+
+  context "file with no result" do
+
+    before :each do 
+      @no_hit_aragorn_file = Dir.pwd + "/spec/files/example_no_hit_tmRNA_aragorn.out"
+    end
+
+    it "should parse the record into one block per result" do
+      pf = Phagefinder::File::Aragorn.new(@no_hit_aragorn_file)
+      expect {pf.toGFF}.to raise_error
+    end
+
+  end
   
   # it "should get the strand from the orientation of the begin/end values" do
   #   pf = Phagefinder::File::Aragorn.new(@aragorn_file)
