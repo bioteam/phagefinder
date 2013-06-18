@@ -26,6 +26,11 @@ module Phagefinder
     parser = Phagefinder::File::Trnascan.new(file)
     return parser.toGFF
   end
+
+  def Phagefinder.aragorn_to_gff(file)
+    parser = Phagefinder::File::Aragorn.new(file)
+    return parser.toGFF
+  end
   
   def Phagefinder.identify_file_type(file_name)
     if file_name =~ /.+_info.txt$/
@@ -36,6 +41,8 @@ module Phagefinder
       "ptt"
     elsif file_name =~ /tRNAscan.out$/
       "trnascan"
+    elsif file_name =~ /.*?tmRNA_aragorn.out$/
+      "aragorn"
     else
       "unknown"
     end
@@ -51,6 +58,8 @@ module Phagefinder
       Phagefinder.ptt_to_gff(file)
     when "trnascan"
       Phagefinder.trnascan_to_gff(file)
+    when "aragorn"
+      Phagefinder.aragorn_to_gff(file)
     when "unknown"
       raise "unidentified file type for #{file} - could not parse automatically"
     else

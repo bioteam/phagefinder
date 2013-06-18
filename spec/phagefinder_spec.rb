@@ -26,6 +26,13 @@ describe "it should have core methods" do
     Phagefinder.trnascan_to_gff(trnascan_file).first.should eq expected_GFF
   end
   
+  it "should parse an Aragorn file" do
+    aragorn_file = Dir.pwd + "/spec/files/example_tmRNA_aragorn.out"
+    expected_GFF = "NC_003197\tAragorn\ttmRNA\t2843947\t2844309\t0\t+\t0\tName=ANDETYALAA**"
+    Phagefinder.aragorn_to_gff(aragorn_file).first.should eq expected_GFF
+  end
+
+
   it "should try to autodetect the file type from the name" do
     test_file_name = "test_info.txt"
     Phagefinder.identify_file_type(test_file_name).should == "info"
@@ -38,6 +45,9 @@ describe "it should have core methods" do
     
     test_file_name = "tRNAscan.out"
     Phagefinder.identify_file_type(test_file_name).should == "trnascan"
+
+    test_file_name = "tmRNA_aragorn.out"
+    Phagefinder.identify_file_type(test_file_name).should == "aragorn"
   end
   
   it "should autoconvert known file types to GFF" do
@@ -53,6 +63,11 @@ describe "it should have core methods" do
     trnascan_file = Dir.pwd + "/spec/files/tRNAscan.out"
     expected_GFF = "NC_003197\ttRNAscan\ttRNA_gene\t290790\t290866\t88.37\t+\t0\tName=Ile GAT"
     Phagefinder.file_to_gff(trnascan_file).first.should eq expected_GFF
+
+    aragorn_file = Dir.pwd + "/spec/files/example_tmRNA_aragorn.out"
+    expected_GFF = "NC_003197\tAragorn\ttmRNA\t2843947\t2844309\t0\t+\t0\tName=ANDETYALAA**"
+    Phagefinder.file_to_gff(aragorn_file).first.should eq expected_GFF
+
   end
   
 end

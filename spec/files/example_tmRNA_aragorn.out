@@ -1,0 +1,86 @@
+------------------------------
+ARAGORN v1.2      Dean Laslett
+------------------------------
+
+Please reference the following paper if you use this
+program as part of any published research.
+
+Laslett, D. and Canback, B. (2004) ARAGORN, a
+program for the detection of transfer RNA and
+transfer-messenger RNA genes in nucleotide sequences.
+Nucleic Acids Research, 32;11-16.
+
+
+Searching for tmRNA genes
+Assuming circular topology, search wraps around ends
+Searching both strands
+Using standard genetic code
+
+
+NC_003197 Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 chromosome, complete genome.
+9714852 nucleotides in sequence
+Mean G+C content = 52.2%
+
+1.
+Location [2843947,2844309]
+tmRNA Sequence in NC_003197 Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 chro
+
+1   .   10    .   20    .   30    .   40    .   50
+ggggctgattctggattcgacgggatttGCGAAACCCAAGGTGCATGCCG
+AGGGGCGGTTGGCCTCGTAAAAAGCCGCAAAAAAATAGTCgcaaacgacg
+aaacctacgctttagcagcttaataaCCTGCTTAGAGCCCTCTCTCCCTA
+GCCTCCGCTCTTAGGACGGGGATCAAGAGAGGTCAAACCCAAAAGAGATC
+GCGCGGATGCCCTGCCTGGGGTTGAAGCGTTAAAACGAATCAGGCTAGTC
+TGGTAGTGGCGTGTCCGTCCGCAGGTGCCAGGCGAATGTAAAGACTGACT
+AAGCATGTAGTACCGAGGATGTAGgaatttcggacgcgggttcaactccc
+gccagctccacca
+
+Resume consensus sequence (at 84): aatagtcgcaaacgacga
+
+Tag peptide (at 91)
+Tag sequence: gca-aac-gac-gaa-acc-tac-gct-tta-gca-gct-taa-taa
+Tag peptide:  Ala-Asn-Asp-Glu-Thr-Tyr-Ala-Leu-Ala-Ala-Stop-Stop
+Tag peptide:  ANDETYALAA**
+Match with tmRNA tags from:
+Neisseria gonorrhoeae, Neisseria meningitidis, Neisseria lactamica
+Chromobacterium violaceum, Methylobacillus glycogenes, Methylobacillus flagellatus
+Moraxella catarrhalis, Uncultured U04, Acinetobacter ADP1
+Uncultured RCA4, Uncultured LEM1, Salmonella typhimurium
+Salmonella typhi, Salmonella enterica 1, Salmonella enterica 3
+Salmonella enterica 5, Uncultured VLS5, Uncultured FS1
+
+
+2.
+Location [7701367,7701729]
+tmRNA Sequence in NC_003197 Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 chro
+
+1   .   10    .   20    .   30    .   40    .   50
+ggggctgattctggattcgacgggatttGCGAAACCCAAGGTGCATGCCG
+AGGGGCGGTTGGCCTCGTAAAAAGCCGCAAAAAAATAGTCgcaaacgacg
+aaacctacgctttagcagcttaataaCCTGCTTAGAGCCCTCTCTCCCTA
+GCCTCCGCTCTTAGGACGGGGATCAAGAGAGGTCAAACCCAAAAGAGATC
+GCGCGGATGCCCTGCCTGGGGTTGAAGCGTTAAAACGAATCAGGCTAGTC
+TGGTAGTGGCGTGTCCGTCCGCAGGTGCCAGGCGAATGTAAAGACTGACT
+AAGCATGTAGTACCGAGGATGTAGgaatttcggacgcgggttcaactccc
+gccagctccacca
+
+Resume consensus sequence (at 84): aatagtcgcaaacgacga
+
+Tag peptide (at 91)
+Tag sequence: gca-aac-gac-gaa-acc-tac-gct-tta-gca-gct-taa-taa
+Tag peptide:  Ala-Asn-Asp-Glu-Thr-Tyr-Ala-Leu-Ala-Ala-Stop-Stop
+Tag peptide:  ANDETYALAA**
+Match with tmRNA tags from:
+Neisseria gonorrhoeae, Neisseria meningitidis, Neisseria lactamica
+Chromobacterium violaceum, Methylobacillus glycogenes, Methylobacillus flagellatus
+Moraxella catarrhalis, Uncultured U04, Acinetobacter ADP1
+Uncultured RCA4, Uncultured LEM1, Salmonella typhimurium
+Salmonella typhi, Salmonella enterica 1, Salmonella enterica 3
+Salmonella enterica 5, Uncultured VLS5, Uncultured FS1
+
+
+
+Number of tmRNA genes = 2
+
+
+Configuration: aragorn -m -o tmRNA_aragorn.out NC_003197.fa 
