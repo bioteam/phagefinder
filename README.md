@@ -70,6 +70,7 @@ For more information on the GFF3 file format and what each column means see: htt
 	* Name=#{label},#{type}
 	* phagefinder-#asmbl_id=#{asmbl_id};phagefinder-genome_size=#{size}; (etc)
 
+
 ### Phagefinder::File::Info
 
 The Phagefinder::File::Info module is dedicated to operations on the info.txt output file. A typical file looks something like this with no header line and then multiple tab delimited lines indicating prediced gene locations against the parent contig
