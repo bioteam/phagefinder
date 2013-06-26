@@ -10,7 +10,7 @@ describe "it should have core methods" do
   
   it "should parse a tab file" do
     tab_file = Dir.pwd + "/spec/files/tab_example.txt"
-    expected_GFF = "minirun\tPhageFinder\tphage_sequence\t961043\t1041426\t0\t+\t0\tName=Large prophage"
+    expected_GFF = "minirun\tPhageFinder\tphage_sequence\t961043\t1041426\t0\t+\t0\tName=Large prophage;phagefinder-#asmbl_id=minirun;phagefinder-genome_size=1050000;phagefinder-genome_gc=52.55;phagefinder-begin_region=961043;phagefinder-end_region=1041426;phagefinder-size_region=80384;phagefinder-label=Large;phagefinder-type=prophage;phagefinder-5prime_att=N.D.;phagefinder-3prime_att=N.D.;phagefinder-target=N.D.;phagefinder-region_gc=52.88;phagefinder-best_db_match=NC_001416;phagefinder-begin_gene=NP_459867.1;phagefinder-end_gene=NP_459936.1;phagefinder-#integrase_HMMs=1;phagefinder-#core_HMMs=5;phagefinder-#>noise_HMMs=0;phagefinder-#lytic_HMMs=3;phagefinder-#tail_HMMs=13;phagefinder-#Mu_HMMs=0;phagefinder-region_orientation=+;phagefinder-distance_int_to_att=0;phagefinder-#genes=77;phagefinder-#serine_recombinases=0"
     Phagefinder.tab_to_gff(tab_file).first.should eq expected_GFF
   end
   
@@ -56,7 +56,7 @@ describe "it should have core methods" do
     Phagefinder.file_to_gff(info_file).first.should eq expected_GFF
     
     tab_file = Dir.pwd + "/spec/files/example_tab.txt"
-    expected_GFF = "minirun\tPhageFinder\tphage_sequence\t961043\t1041426\t0\t+\t0\tName=Large prophage"
+    expected_GFF = "minirun\tPhageFinder\tphage_sequence\t961043\t1041426\t0\t+\t0\tName=Large prophage;phagefinder-#asmbl_id=minirun;phagefinder-genome_size=1050000;phagefinder-genome_gc=52.55;phagefinder-begin_region=961043;phagefinder-end_region=1041426;phagefinder-size_region=80384;phagefinder-label=Large;phagefinder-type=prophage;phagefinder-5prime_att=N.D.;phagefinder-3prime_att=N.D.;phagefinder-target=N.D.;phagefinder-region_gc=52.88;phagefinder-best_db_match=NC_001416;phagefinder-begin_gene=NP_459867.1;phagefinder-end_gene=NP_459936.1;phagefinder-#integrase_HMMs=1;phagefinder-#core_HMMs=5;phagefinder-#>noise_HMMs=0;phagefinder-#lytic_HMMs=3;phagefinder-#tail_HMMs=13;phagefinder-#Mu_HMMs=0;phagefinder-region_orientation=+;phagefinder-distance_int_to_att=0;phagefinder-#genes=77;phagefinder-#serine_recombinases=0"
     Phagefinder.file_to_gff(tab_file).first.should eq expected_GFF
     
     
