@@ -26,4 +26,11 @@ describe Phagefinder::File::Utils do
     expect { Phagefinder::File::Utils.new("/fake/file.txt")}.to raise_error
   end
 
+  it "should capture the file headers where available" do
+    @tab_file = Dir.pwd + "/spec/files/example_tab.txt"
+    utils = Phagefinder::File::Utils.new(@tab_file)
+    utils.parse_file(:remove_headers => true)
+    utils.headers.size.should == 25
+  end
+
 end

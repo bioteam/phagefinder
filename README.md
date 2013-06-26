@@ -56,7 +56,7 @@ The Tab module is dedicated to operations on the tab output file. A typical file
 
 The Phagefinder::File::Tab module can be used to convert a PhageFinder tab file into appropriate GFF3.
 
-For more information on the GFF3 file format and what each column means see: http://www.sequenceontology.org/gff3.shtml. The 9 columns are shown below, along with the column from the Phagefinder tab file that I have used to provide the data for the GFF column.
+For more information on the GFF3 file format and what each column means see: http://www.sequenceontology.org/gff3.shtml. The 9 columns are shown below, along with the column from the Phagefinder tab file that I have used to provide the data for the GFF column. To facilitate subsequent data analysis all the columns of the Tab output are also included in the attributes column with the attribute tag name following the format 'phagefinder-[column-header-name]=[column-value]', eg. "phagefinder-#asmbl_id=minirum"
 
 1.	Seqid 	-> asmbl_id
 2.	Source	-> "PhageFinder" (Algorithm name)
@@ -68,6 +68,7 @@ For more information on the GFF3 file format and what each column means see: htt
 8.	Phase	-> set to '0'?
 9.	Attributes
 	* Name=#{label},#{type}
+	* phagefinder-#asmbl_id=#{asmbl_id};phagefinder-genome_size=#{size}; (etc)
 
 
 ### Phagefinder::File::Info

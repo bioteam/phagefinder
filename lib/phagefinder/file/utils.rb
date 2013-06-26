@@ -2,11 +2,12 @@ module Phagefinder::File
   
   class Utils
     
-    attr_accessor :file, :filename
+    attr_accessor :file, :filename, :headers
     
     def initialize(file)
       @file = File.open(file, "r")
       @filename = parse_filename(file)
+      @headers = []
     end
     
     def parse_filename(file)
@@ -24,7 +25,8 @@ module Phagefinder::File
       
       if remove_headers
         (1..header_line_count).each do |c|
-          lines.delete_at(0)
+          @headers = lines.first.split(/\s+/)
+          header = lines.delete_at(0)
         end
       end
       
