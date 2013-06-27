@@ -1,5 +1,5 @@
 ------------------------------
-ARAGORN v1.2      Dean Laslett
+ARAGORN v1.2.36   Dean Laslett
 ------------------------------
 
 Please reference the following paper if you use this
@@ -17,10 +17,15 @@ Searching both strands
 Using standard genetic code
 
 
-NC_003197 Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 chromosome, complete genome.
-4857432 nucleotides in sequence
-Mean G+C content = 52.2%
+AP009180 Candidatus Carsonella ruddii PV DNA, complete genome.
+159662 nucleotides in sequence
+Mean G+C content = 16.6%
+
+Nothing found in AP009180 Candidatus Carsonella ruddii PV DNA, complete genome.
 
 
 
-Configuration: aragorn -m -o t/data/tmRNA_aragorn.out t/data/NC_003197.fa 
+
+
+
+Configuration: aragorn -m -o ./tmRNA_aragorn.out ./AP009180.fa 

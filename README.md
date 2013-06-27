@@ -29,10 +29,11 @@ require 'phagefinder'
 	tab_gff_array.each do |line|
 		puts "GFF: #{line}"
 	end
+	
 	# there is also a generic Phagefinder.file_to_gff(file) method that attempts to
 	# identify the file type by its file name
-	# The gem will throw an error if the input file can not be found or read, similarly
-	# aragorn files sometimes contain no results, if so the script will raise an exception
+	
+	# The gem will throw an exception if the input file can not be found or read
 	# so you should plan to rescue this and do something sensible
 	begin
 		tab_gff_array = Phagefinder.file_to_gff('path/to/example_tab.txt')

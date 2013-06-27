@@ -58,7 +58,8 @@ describe Phagefinder::File::Aragorn do
 
     it "should parse the record into one block per result" do
       pf = Phagefinder::File::Aragorn.new(@no_hit_aragorn_file)
-      expect {pf.toGFF}.to raise_error
+      # pf.toGFF
+      pf.toGFF.should == []
     end
 
   end
