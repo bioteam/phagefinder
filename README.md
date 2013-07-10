@@ -35,6 +35,7 @@ require 'phagefinder'
 	
 	# The gem will throw an exception if the input file can not be found or read
 	# so you should plan to rescue this and do something sensible
+	# If the file is empty (zero rows) then you will get an empty GFF array
 	begin
 		tab_gff_array = Phagefinder.file_to_gff('path/to/example_tab.txt')
 	rescue

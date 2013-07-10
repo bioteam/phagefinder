@@ -20,20 +20,24 @@ module Phagefinder::File
       
       remove_headers = params[:remove_headers] || false
       header_line_count = params[:header_line_count] || 1
+      gff = []
       
       lines = File.readlines(@file)
       
-      if remove_headers
-        (1..header_line_count).each do |c|
-          @headers = lines.first.split(/\s+/)
-          header = lines.delete_at(0)
+      if lines.count > 0
+        if remove_headers && lines.count >= header_line_count
+          (1..header_line_count).each do |c|
+            @headers = lines.first.split(/\s+/)
+            header = lines.delete_at(0)
+          end
+        end
+      
+
+        lines.each do |l|
+          gff << line_to_gff(l)
         end
       end
       
-      gff = []
-      lines.each do |l|
-        gff << line_to_gff(l)
-      end
       return gff
     end
     
