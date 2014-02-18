@@ -2,6 +2,8 @@
 
 The Phagefinder gem encapsulates a variety of functions for dealing with PhageFinder output files.
 
+[![Code Climate](https://codeclimate.com/github/bioteam/phagefinder.png)](https://codeclimate.com/github/bioteam/phagefinder)
+
 ## Installation
 
 Add this line to your application's Gemfile:
